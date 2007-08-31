@@ -15,6 +15,8 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: mono-devel
 BuildRequires: libncurses-devel
 BuildRequires: monotorrent
+Requires: ncurses
+%define _requires_exceptions ^lib.*
 
 %description
 This is a simple Bittorrent client with a curses UI based on Monotorrent.
