@@ -11,6 +11,7 @@ Source1: mono-curses.dll.config
 License: MIT
 Group: Networking/File transfer
 Url: http://www.monotorrent.com/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: mono-devel
 BuildRequires: libncurses-devel
 BuildRequires: monotorrent
