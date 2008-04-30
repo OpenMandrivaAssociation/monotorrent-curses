@@ -8,6 +8,9 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{name}-%{svn}.tar.bz2
+#gw this is automatically generated at build time by attrib, but this does
+# not work in iurt
+Source1: constants.cs
 Patch: monotorrent-curses-makefile.patch
 License: MIT
 Group: Networking/File transfer
@@ -34,6 +37,7 @@ Monodoc format.
 %prep
 %setup -q -n mono-curses
 %patch
+cp %SOURCE1 .
 
 %build
 ./configure --prefix=%_prefix
