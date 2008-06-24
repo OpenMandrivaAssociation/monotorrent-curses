@@ -1,7 +1,7 @@
 %define name monotorrent-curses
 %define version 0.2
 %define svn r102179
-%define release %mkrel 0.%svn.1
+%define release %mkrel 0.%svn.2
 
 Summary: Bittorrent client for Mono with a simple curses UI
 Name: %{name}
