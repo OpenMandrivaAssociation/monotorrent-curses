@@ -1,7 +1,7 @@
 %define name monotorrent-curses
 %define version 0.2
-%define svn r102179
-%define release %mkrel 0.%svn.2
+%define svn r128192
+%define release %mkrel 0.%svn.1
 
 Summary: Bittorrent client for Mono with a simple curses UI
 Name: %{name}
@@ -18,7 +18,6 @@ Url: http://www.mono-project.com/MonoCurses
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: mono-devel
 BuildRequires: libncurses-devel
-BuildRequires: monotorrent >= 0.30
 BuildRequires: monodoc
 
 %description
@@ -47,15 +46,10 @@ make
 rm -rf $RPM_BUILD_ROOT
 %makeinstall 
 %if %_lib != lib
-ln -sf  %_prefix/lib/monotorrent/MonoTorrent.dll %buildroot%_prefix/lib/monotorrent/
 mkdir -p %buildroot%_libdir
-mv %buildroot%_prefix/lib/monotorrent %buildroot%_libdir
-%else 
-rm -f %buildroot%_prefix/lib/monotorrent/MonoTorrent.dll
-%endif
+mv %buildroot%_prefix/lib/{*.so,pkgconfig} %buildroot%_libdir
 
-perl -pi -e "s^%_prefix/lib^%_libdir/^" %buildroot%_bindir/monotorrent
-#install -m 644 %SOURCE1 %buildroot%_libdir/monotorrent/
+%endif
 
 %post doc
 %_bindir/monodoc --make-index > /dev/null
@@ -70,8 +64,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc README AUTHORS
-%_bindir/monotorrent
-%_libdir/monotorrent/
+%_libdir/libmono-curses.so
+%_libdir/pkgconfig/mono-curses.pc
+%_prefix/lib/mono/gac/mono-curses
+%_prefix/lib/mono/mono-curses
+
+
 
 %files doc
 %defattr(-,root,root)
