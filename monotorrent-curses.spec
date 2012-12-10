@@ -75,3 +75,47 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc ChangeLog
 %_prefix/lib/monodoc/sources/mono-curses.*
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2-0.r128192.3mdv2011.0
++ Revision: 620391
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.2-0.r128192.2mdv2010.0
++ Revision: 430089
+- rebuild
+
+  + Götz Waschk <waschk@mandriva.org>
+    - new snapshot
+    - fix build
+    - update file list
+
+* Tue Jun 24 2008 Götz Waschk <waschk@mandriva.org> 0.2-0.r102179.2mdv2009.0
++ Revision: 228504
+- rebuild for new monotorrent
+
+* Wed Apr 30 2008 Götz Waschk <waschk@mandriva.org> 0.2-0.r102179.1mdv2009.0
++ Revision: 199422
+- work around build bot bug
+- new version
+- drop source 1
+- fix make file
+- bump deps
+- add doc subpackage
+- fix deps
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Fri Apr 27 2007 Götz Waschk <waschk@mandriva.org> 0.1-1mdv2008.0
++ Revision: 18485
+- Import monotorrent-curses
+
+
+
+* Thu Apr 26 2007 Götz Waschk <waschk@mandriva.org> 0.1-1mdv2008.0
+- initial package
