@@ -14,7 +14,7 @@ Source1: constants.cs
 Patch: monotorrent-curses-makefile.patch
 License: MIT
 Group: Networking/File transfer
-Url: http://www.mono-project.com/MonoCurses
+Url: https://www.mono-project.com/MonoCurses
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: mono-devel
 BuildRequires: libncurses-devel
