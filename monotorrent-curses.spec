@@ -16,6 +16,11 @@ License: MIT
 Group: Networking/File transfer
 Url: https://www.mono-project.com/MonoCurses
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: mono-devel
 BuildRequires: libncurses-devel
 BuildRequires: monodoc
